@@ -1,15 +1,18 @@
-#! /usr/bin/env python
+#!/usr/bin/env python3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     from liblax.parser import run
     from optparse import OptionParser
-    
-    parser   = OptionParser()
-    parser.add_option("-c", "--code", action='store', dest="code", help="Example: lax - c 'x ** 2 - 1'")
+    import sys
+
+    parser = OptionParser()
+    parser.add_option(
+        "-c", "--code", action="store", dest="code", help="Example: lax -c 'x ** 2 - 1'"
+    )
     (opt, args) = parser.parse_args()
-    
-    print run(opt.code)
-    
 
+    if opt.code is None:
+        parser.print_help()
+        sys.exit("Error: no code provided!")
 
-
+    print(run(opt.code))

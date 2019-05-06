@@ -13,7 +13,7 @@ when compared to latex.
 Install
 =======
 
-    pip2 install lax
+    pip install --user lax
 
 That is all.
 
@@ -24,13 +24,12 @@ With basic operations:
 
     [tau@sigma ~]$ lax -c 'x * (2 - y) * yz'
     x\cdot \left(2-y\right)\cdot yz
-    [tau@sigma ~]$ 
-      
+    [tau@sigma ~]$
+
 With roots and fractions:
 
     [tau@sigma ~]$ lax -c '2 ^ x/(2 - y)'
     \sqrt[2]{\left(\frac{x}{2-y}\right)}
-        
 
 Notice that to use the root you use ^:
 
@@ -60,7 +59,7 @@ With functions:
 
     [tau@sigma ~]$ lax -c 'xyz^(alpha(x-2))'
     \sqrt[xyz]{alpha(x-2)}
-    [tau@sigma ~]$ 
+    [tau@sigma ~]$
 
 Notice that if you want to omit multiplication sign you can do:
 
@@ -86,5 +85,3 @@ A really convoluted example:
 
     [tau@sigma ~]$ lax -c 'x * (x-3) (f(x-3) - 2) (x ** (x-3/(x-2)))'
     x\cdot \left(x-3\right)\left(f\left(x-3\right)-2\right)\left({x}^{\left(x-\frac{3}{x-2}\right)}\right)
-
-
